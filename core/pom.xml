@@ -31,4 +31,23 @@
 
   <description>VDX Core utils</description>
 
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.zanata</groupId>
+        <artifactId>zanata-maven-plugin</artifactId>
+        <version>${version.zanata}</version>
+          <configuration>
+            <projectConfig>${project.basedir}/zanata.xml</projectConfig>
+            <!-- Location where the messages are located -->
+            <srcDir>src/main/resources</srcDir>
+            <!-- Location where the bundles will be downloaed to -->
+            <transDir>src/main/resources</transDir>
+            <!-- Only upload the Messages.properties -->
+            <includes>Messages.properties</includes>
+          </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
 </project>
